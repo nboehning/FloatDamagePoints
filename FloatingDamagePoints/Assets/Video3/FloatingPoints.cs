@@ -17,7 +17,8 @@ public class FloatingPoints : MonoBehaviour
 	{
 	    anim = damagePoints.GetComponent<Animator>();
 	    animHead = criticalImage.GetComponent<Animator>();
-	    Debug.Log(anim);
+	    anim.SetTrigger("dam");
+        animHead.SetTrigger("head");
 	    Debug.Log(animHead);
 	    damagePoints = damagePoints.GetComponent<Text>();
 	}
@@ -43,21 +44,21 @@ public class FloatingPoints : MonoBehaviour
             if (hit.transform.tag == "chestDamage")
             {
                 Debug.Log("Hits chest");
-                anim.SetTrigger("dam");
                 damagePoints.text = chestDamage;
+                anim.SetTrigger("dam");
             }
             if (hit.transform.tag == "legDamage")
             {
                 Debug.Log("Hits legs");
-                anim.SetTrigger("dam");
                 damagePoints.text = legDamage;
+                anim.SetTrigger("dam");
             }
             if (hit.transform.tag == "headDamage")
             {
                 Debug.Log("Hits head");
+                damagePoints.text = headDamage;
                 anim.SetTrigger("dam");
                 animHead.SetTrigger("head");
-                damagePoints.text = headDamage;
             }
         }
     }
