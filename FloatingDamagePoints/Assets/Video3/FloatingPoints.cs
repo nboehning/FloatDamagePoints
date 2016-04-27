@@ -39,21 +39,20 @@ public class FloatingPoints : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && Physics.Raycast(transform.position, fwd, out hit, rayLength))
         {
             Debug.Log("Fires raycast");
-            Debug.Log(hit.transform.name);
             Debug.Log(hit.transform.tag);
-            if (hit.transform.tag == "chestDamage")
+            if (hit.transform.tag == "ChestDamage")
             {
                 Debug.Log("Hits chest");
                 damagePoints.text = chestDamage;
                 anim.SetTrigger("dam");
             }
-            if (hit.transform.tag == "legDamage")
+            if (hit.transform.tag == "LegDamage")
             {
                 Debug.Log("Hits legs");
                 damagePoints.text = legDamage;
                 anim.SetTrigger("dam");
             }
-            if (hit.transform.tag == "headDamage")
+            if (hit.transform.tag == "HeadDamage")
             {
                 Debug.Log("Hits head");
                 damagePoints.text = headDamage;
@@ -61,5 +60,6 @@ public class FloatingPoints : MonoBehaviour
                 animHead.SetTrigger("head");
             }
         }
+        
     }
 }
